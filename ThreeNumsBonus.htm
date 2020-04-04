@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+  <title>Example Javascript Program for Boy Scout Merit Badge</title>
+
+<script type="text/javascript">
+	
+	//create a function to do the calculation
+	function smallestof3(){
+	  //set variables to hold each of the 3 numbers
+		var num1 = parseInt(document.getElementById('MyNum1').value);
+		var num2 = parseInt(document.getElementById('MyNum2').value);
+		var num3 = parseInt(document.getElementById('MyNum3').value);
+		var smaller;
+		var smallest;
+		
+		//compare the first 2 numbers and find the largest one
+		if (num1 < num2){
+			smaller = num1;
+		}else {
+			smaller = num2;
+		}
+			
+		//compare the 3rd number vs the larger of the first 2 numbers
+		if(smaller < num3){
+			smallest = smaller;
+		}else{
+			smallest = num3;
+		}
+		
+		//push the answer back to the HTML page (using the ID of the markup element: 'myAnswer')
+    document.getElementById('myAnswer').innerHTML = smallest;
+	}
+		
+	</script>
+	
+</head>
+ 
+<body>
+     
+    <h1>Javascript Programming Example</h1>
+  
+        <h2>Enter 1 number into each field. We will calculate which one is the smallest: </br>
+            <input type="text" id="MyNum1"/></br>
+			<input type="text" id="MyNum2"/></br>
+			<input type="text" id="MyNum3"/></br>
+            <input type="button" value="Go!" onclick="smallestof3();"/>
+        </h2>
+        <h3 id="myAnswer"></h3>
+ 
+</body>
+</html>
